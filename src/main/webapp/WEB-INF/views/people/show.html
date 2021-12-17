@@ -1,18 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Человек</title>
 </head>
 <body>
 
-<p th:text="${person.getName()}">VALUE</p>
 <p th:text="${person.getId()}">VALUE</p>
-<a th:href="@{/people/{id}/edit(id=${person.getId()})}">Update person...</a>
+<p th:text="${person.getName()}">VALUE</p>
+<p th:text="${person.getSurname()}">VALUE</p>
+<p th:text="${person.getAge()}">VALUE</p>
+<p th:text="${person.getEmail()}">VALUE</p>
+<!--<a th:href="@{/people/{id}/edit(id=${person.getId()})}">Update person...</a>-->
+
+<form th:method="GET" th:action="@{/people/{id}/edit(id=${person.getId()})}">
+    <input type="submit" value="UPDATE"/>
+</form>
+
  <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
     <input type="submit" value="DELETE"/>
 </form>
-<br/>
-<a href="/people">Back to the list of people</a>
+
+<form th:method="GET" th:action="@{/people}">
+    <input type="submit" value="GO BACK"/>
+</form>
+<!--<a href="/people">Back to the list of people</a>-->
 </body>
 </html>
