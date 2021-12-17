@@ -11,6 +11,8 @@
     <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getSurname()}">userSurname</a>
     <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getAge()}">userAge</a>
 </div>
+<br/>
+<hr/>
 <a href="/people/new">Create new person...</a>
 <br/>
 <a href="/">Back to main page...</a>
